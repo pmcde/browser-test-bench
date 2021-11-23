@@ -22,7 +22,7 @@
     "prestart": "gulp build",
     "start": "gulp serve",
     "test": "",
-    "package": "npm run build && zip -r dist.zip dist"
+    "package": "npm ci && npm run build && zip -r dist.zip dist"
   },
   "repository": {
     "type": "git",
