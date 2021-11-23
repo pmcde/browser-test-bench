@@ -1,0 +1,23 @@
+{% set navItem = {name: "Document Domain Manipulation"} %}
+{% set listFiles = listFiles %}
+{% set templatePath = "templates/layout.njk" if isGlobal else "templates/none.njk" %}
+{% extends templatePath %}
+
+{% block sectionTitle -%}
+  <h1 class="h2">{{ navItem.name }}</h1>
+{%- endblock %}
+
+{% block content %}
+  
+  <p>Dom-based document-domain manipulation</p>
+
+  {% for item in listFiles("app/pages/rules/document_domain_manipulation/!(index).+(html|njk|nunjucks)") %}
+  {% import item.replace("app/","") as page %}
+  <li>
+      <a href="{{ item.replace("app/pages/","/").replace(".njk",".html") }}">      
+      {{ page.navItem.name }}
+      </a>
+  </li>
+  {% endfor %}
+
+{% endblock %}

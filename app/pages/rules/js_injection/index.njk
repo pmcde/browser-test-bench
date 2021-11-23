@@ -1,0 +1,24 @@
+{% set navItem = {name: "JavaScript Injection"} %}
+{% set listFiles = listFiles %}
+{% set templatePath = "templates/layout.njk" if isGlobal else "templates/none.njk" %}
+{% extends templatePath %}
+
+{% block sectionTitle -%}
+  <h1 class="h2">{{ navItem.name }}</h1>
+{%- endblock %}
+
+{% block content %}
+    
+  <p>CWE-094: Improper Control of Generation of Code ('Code Injection')</p>
+	<p>CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')</p>
+
+  {% for item in listFiles("app/pages/rules/js_injection/!(index).+(html|njk|nunjucks)") %}
+    {% import item.replace("app/","") as page %}
+    <li>
+        <a href="{{ item.replace("app/pages/","/").replace(".njk",".html") }}">      
+        {{ page.navItem.name }}
+        </a>
+    </li>
+    {% endfor %}
+
+{% endblock %}

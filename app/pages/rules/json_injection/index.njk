@@ -1,0 +1,22 @@
+{% set navItem = {name: "Client-side Json Injection"} %}
+{% set listFiles = listFiles %}
+{% set templatePath = "templates/layout.njk" if isGlobal else "templates/none.njk" %}
+{% extends templatePath %}
+
+{% block sectionTitle -%}
+  <h1 class="h2">{{ navItem.name }}</h1>
+{%- endblock %}
+
+{% block content %}
+
+
+  {% for item in listFiles("app/pages/rules/json_injection/!(index).+(html|njk|nunjucks)") %}
+    {% import item.replace("app/","") as page %}
+    <li>
+        <a href="{{ item.replace("app/pages/","/").replace(".njk",".html") }}">      
+        {{ page.navItem.name }}
+        </a>
+    </li>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% set navItem = {name: "XMLHttpRequest.setRequestHeader"} %}
+{% set templatePath = "templates/stage.njk" if isGlobal else "templates/none.njk" %}
+{% extends templatePath %}
+
+{% block sectionTitle -%}
+  <h1 class="h2">{{ navItem.name }}</h1>
+{%- endblock %}
+
+{% block code %}
+<script id="code">
+{% include rulesTemplatePath+"ajax_request-header_manipulation/XMLHttpRequest.setRequestHeader.njk" %}
+</script>
+{% endblock %}

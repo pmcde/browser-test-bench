@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.css" />
+    <link rel='stylesheet' href='/css/dashboard.css' /> 
+  
+    <script>
+    document.addEventListener("DOMContentLoaded", ()=>{
+      let editorEle = document.getElementById('editor');
+      let codeEle = document.getElementById('code');
+      if(editorEle && codeEle){
+        editorEle.value = codeEle.innerText.trim();
+        var editor = CodeMirror.fromTextArea(editorEle, {
+            mode: "javascript",
+            lineNumbers: true
+        });
+        editor.save()
+      }
+
+    });
+    </script>
+  
+  </head>
+  
+  <body>
+      
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/">BrowserTestBench</a>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="sidebar-sticky pt-3">
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Rules</span>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/rules/dom_xss/index.html">      
+                    DOM XSS
+                  </a>
+                </li>
+              
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/rules/js_injection/index.html">      
+                    JavaScript Injection
+                  </a>
+                </li>
+              
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/rules/open_redirect/index.html">      
+                    Open Redirect
+                  </a>
+                </li>
+              
+            </ul>
+            <hr />
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="/sources/sources.html">Sources</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Sources</h1>
+          </div>
+          
+ These vulnerabilities source the payload from a component of the address bar, usually the fragment, and use javascript sinks to trigger DOM based XSS.
+ </br> </br>
+ <b>URL Based: </b>
+ <ul>
+   
+     
+     <li>
+       <a href="/sources/url/document.baseURI.html">      
+         document.baseURI
+       </a>
+     </li>
+
+   
+     
+     <li>
+       <a href="/sources/url/document.documentURI.html">      
+         document.documentURI
+       </a>
+     </li>
+
+   
+     
+     <li>
+       <a href="/sources/url/location.hash.html">      
+         window.location.hash
+       </a>
+     </li>
+
+   
+     
+     <li>
+       <a href="/sources/url/location.href.html">      
+         window.location.href
+       </a>
+     </li>
+
+   
+     
+     <li>
+       <a href="/sources/url/location.html">      
+         window.location
+       </a>
+     </li>
+
+   
+     
+     <li>
+       <a href="/sources/url/location.pathname.html">      
+         window.location.pathname
+       </a>
+     </li>
+
+   
+     
+     <li>
+       <a href="/sources/url/location.search.html">      
+         window.location.search
+       </a>
+     </li>
+
+   
+     
+     <li>
+       <a href="/sources/url/location.URL.html">      
+         window.location.URL
+       </a>
+     </li>
+
+   
+ </ul>
+ 
+ <b>Window / Document Sources: </b>
+ <ul>
+   
+     
+     <li>
+       <a href="/sources/win_doc/document.referrer.html">      
+         document.referrer
+       </a>
+     </li>
+   
+     
+     <li>
+       <a href="/sources/win_doc/window.name.html">      
+         window.name
+       </a>
+     </li>
+   
+ </ul>
+
+
+ <b>External: </b>
+ <ul>
+   
+     
+     <li>
+       <a href="/sources/external/postMessage.html">      
+         Window Messaging (post messages)
+       </a>
+     </li>
+   
+ </ul>
+
+ <b>Other: </b>
+ <ul>
+   
+     
+     <li>
+       <a href="/sources/other/document.cookie.html">      
+         document.cookie
+       </a>
+     </li>
+   
+ </ul>
+ 
+
+        </main>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.js"></script>
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/mode/javascript/javascript.min.js">
+    </script>
+  </body>
+</html>

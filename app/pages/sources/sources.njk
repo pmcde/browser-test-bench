@@ -1,0 +1,63 @@
+{% set navItem = {name: "Source Tests"} %}
+{% set listFiles = listFiles %}
+{% set templatePath = "templates/layout.njk" if isGlobal else "templates/none.njk" %}
+{% extends templatePath %}
+
+{% block sectionTitle -%}
+  <h1 class="h2">Sources</h1>
+{%- endblock %}
+
+{% block content %}
+ These vulnerabilities source the payload from a component of the address bar, usually the fragment, and use javascript sinks to trigger DOM based XSS.
+ </br> </br>
+ <b>URL Based: </b>
+ <ul>
+   {% for item in listFiles("app/pages/sources/url/*.+(html|njk|nunjucks)") %}
+     {% import item.replace("app/","") as page %}
+     <li>
+       <a href="{{ item.replace("app/pages/","/").replace(".njk",".html") }}">      
+         {{ page.navItem.name }}
+       </a>
+     </li>
+
+   {% endfor %}
+ </ul>
+ 
+ <b>Window / Document Sources: </b>
+ <ul>
+   {% for item in listFiles("app/pages/sources/win_doc/*.+(html|njk|nunjucks)") %}
+     {% import item.replace("app/","") as page %}
+     <li>
+       <a href="{{ item.replace("app/pages/","/").replace(".njk",".html") }}">      
+         {{ page.navItem.name }}
+       </a>
+     </li>
+   {% endfor %}
+ </ul>
+
+
+ <b>External: </b>
+ <ul>
+   {% for item in listFiles("app/pages/sources/external/*.+(html|njk|nunjucks)") %}
+     {% import item.replace("app/","") as page %}
+     <li>
+       <a href="{{ item.replace("app/pages/","/").replace(".njk",".html") }}">      
+         {{ page.navItem.name }}
+       </a>
+     </li>
+   {% endfor %}
+ </ul>
+
+ <b>Other: </b>
+ <ul>
+   {% for item in listFiles("app/pages/sources/other/*.+(html|njk|nunjucks)") %}
+     {% import item.replace("app/","") as page %}
+     <li>
+       <a href="{{ item.replace("app/pages/","/").replace(".njk",".html") }}">      
+         {{ page.navItem.name }}
+       </a>
+     </li>
+   {% endfor %}
+ </ul>
+ 
+{% endblock %}

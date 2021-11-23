@@ -1,0 +1,7 @@
+{
+  "site": {
+    "title": "BrowserTestBench",
+    "description": "A Nunjucks and Gulp static site boilerplate."
+  },
+  "isGlobal": "true"
+}
