@@ -1,15 +1,16 @@
 let hashvalue = window.location.hash.substring(1);
 
-json = {'user': 'regular','email':'user@example.com'}
+json = '{"user": "regular","email":"user@example.com"}'
 
 if(hashvalue){
-    json = {'user': 'regular','email':hashvalue}
+    json = '{"user": "regular","email":"'+hashvalue+'"}'
 }
 
-let msg = `Hash value: ${hashvalue} || json: ${json}\n`;
+var obj = JSON.parse(json)
 
-var object = JSON.parse(json)
+let msg = `Hash value: ${hashvalue} || object: ${obj.email}\n`;
 
 // some "trusted" logic using the object variable
+// Example: document.getElementById("output").innerHTML = obj.email;
 
 document.getElementById("output").innerText = msg;

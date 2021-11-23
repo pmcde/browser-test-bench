@@ -82,15 +82,15 @@
               
                 
                 <li class="nav-item">
-                  <a class="nav-link" href="/rules/link_manipulation/index.html">      
-                    Link Manipulation
+                  <a class="nav-link" href="/rules/json_injection/index.html">      
+                    Client-side Json Injection
                   </a>
                 </li>
               
                 
                 <li class="nav-item">
-                  <a class="nav-link" href="/rules/local_file-path_manipulation/index.html">      
-                    Local file-path manipulation
+                  <a class="nav-link" href="/rules/link_manipulation/index.html">      
+                    Link Manipulation
                   </a>
                 </li>
               
@@ -112,6 +112,13 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/rules/storage_manipulation/index.html">      
                     HTML 5 - Storage manipulation
+                  </a>
+                </li>
+              
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/rules/xpath_injection/index.html">      
+                    Client-side XPath Injection
                   </a>
                 </li>
               
@@ -155,7 +162,7 @@ let hashvalue = window.location.hash.substring(1);
 let msg = `Hash value: ${hashvalue}`;
 
 if(hashvalue){
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             // Typical action to be performed when the document is ready:

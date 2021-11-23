@@ -82,15 +82,15 @@
               
                 
                 <li class="nav-item">
-                  <a class="nav-link" href="/rules/link_manipulation/index.html">      
-                    Link Manipulation
+                  <a class="nav-link" href="/rules/json_injection/index.html">      
+                    Client-side Json Injection
                   </a>
                 </li>
               
                 
                 <li class="nav-item">
-                  <a class="nav-link" href="/rules/local_file-path_manipulation/index.html">      
-                    Local file-path manipulation
+                  <a class="nav-link" href="/rules/link_manipulation/index.html">      
+                    Link Manipulation
                   </a>
                 </li>
               
@@ -115,6 +115,13 @@
                   </a>
                 </li>
               
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/rules/xpath_injection/index.html">      
+                    Client-side XPath Injection
+                  </a>
+                </li>
+              
             </ul>
             <hr />
             <ul class="nav flex-column mb-2">
@@ -127,7 +134,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">XMLHttpRequest.open</h1>
+            <h1 class="h2">scriptElement.textContent()</h1>
           </div>
           
   <div class="container-sm">
@@ -153,16 +160,10 @@
 <script id="code">
 let hashvalue = window.location.hash.substring(1);
 let msg = `Hash value: ${hashvalue}`;
-
 if(hashvalue){
-  function reqListener () {
-    console.log(this.responseText);
-  }
-
-  var oReq = new XMLHttpRequest();
-  oReq.addEventListener("load", reqListener);
-  oReq.open("GET", hashvalue);
-  oReq.send();
+    const tag = document.createElement("script");
+    tag.textContent = hashvalue;
+    document.body.appendChild(tag); //executes code
 }
 
 document.getElementById("output").innerText = msg;

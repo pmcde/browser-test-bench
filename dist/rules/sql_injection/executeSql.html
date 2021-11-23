@@ -82,15 +82,15 @@
               
                 
                 <li class="nav-item">
-                  <a class="nav-link" href="/rules/link_manipulation/index.html">      
-                    Link Manipulation
+                  <a class="nav-link" href="/rules/json_injection/index.html">      
+                    Client-side Json Injection
                   </a>
                 </li>
               
                 
                 <li class="nav-item">
-                  <a class="nav-link" href="/rules/local_file-path_manipulation/index.html">      
-                    Local file-path manipulation
+                  <a class="nav-link" href="/rules/link_manipulation/index.html">      
+                    Link Manipulation
                   </a>
                 </li>
               
@@ -112,6 +112,13 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/rules/storage_manipulation/index.html">      
                     HTML 5 - Storage manipulation
+                  </a>
+                </li>
+              
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/rules/xpath_injection/index.html">      
+                    Client-side XPath Injection
                   </a>
                 </li>
               
@@ -181,10 +188,10 @@ try {
             /* The first query causes the transaction to (intentionally) fail if the table exists. */
             transaction.executeSql('CREATE TABLE people(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL DEFAULT "John Doe", shirt TEXT NOT NULL DEFAULT "Purple");', []);//, nullDataHandler, errorHandler);
             /* These insertions will be skipped if the table already exists. */
-            transaction.executeSql('insert into people (name, shirt) VALUES ("Joe", "Green");', []);//, nullDataHandler, errorHandler);
-            transaction.executeSql('insert into people (name, shirt) VALUES ("Mark", "Blue");', []);//, nullDataHandler, errorHandler);
-            transaction.executeSql('insert into people (name, shirt) VALUES ("Phil", "Orange");', []);//, nullDataHandler, errorHandler);
-            transaction.executeSql('insert into people (name, shirt) VALUES ("jdoe", "Purple");', []);//, nullDataHandler, errorHandler);
+            transaction.executeSql('insert into people (name, shirt) VALUES ("Joe", "Green");', []);
+            transaction.executeSql('insert into people (name, shirt) VALUES ("Mark", "Blue");', []);
+            transaction.executeSql('insert into people (name, shirt) VALUES ("Phil", "Orange");', []);
+            transaction.executeSql('insert into people (name, shirt) VALUES ("jdoe", "Purple");', []);
         }
     );
 

@@ -47,6 +47,27 @@
               
                 
                 <li class="nav-item">
+                  <a class="nav-link" href="/rules/ajax_request-header_manipulation/index.html">      
+                    Ajax request-header manipulation
+                  </a>
+                </li>
+              
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/rules/cookie_manipulation/index.html">      
+                    Cookie Manipulation
+                  </a>
+                </li>
+              
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/rules/document_domain_manipulation/index.html">      
+                    Document Domain Manipulation
+                  </a>
+                </li>
+              
+                
+                <li class="nav-item">
                   <a class="nav-link" href="/rules/dom_xss/index.html">      
                     DOM XSS
                   </a>
@@ -61,8 +82,43 @@
               
                 
                 <li class="nav-item">
+                  <a class="nav-link" href="/rules/json_injection/index.html">      
+                    Client-side Json Injection
+                  </a>
+                </li>
+              
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/rules/link_manipulation/index.html">      
+                    Link Manipulation
+                  </a>
+                </li>
+              
+                
+                <li class="nav-item">
                   <a class="nav-link" href="/rules/open_redirect/index.html">      
                     Open Redirect
+                  </a>
+                </li>
+              
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/rules/sql_injection/index.html">      
+                    Client side SQL injection
+                  </a>
+                </li>
+              
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/rules/storage_manipulation/index.html">      
+                    HTML 5 - Storage manipulation
+                  </a>
+                </li>
+              
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/rules/xpath_injection/index.html">      
+                    Client-side XPath Injection
                   </a>
                 </li>
               
@@ -78,7 +134,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">document.write()</h1>
+            <h1 class="h2">scriptElement.innerText()</h1>
           </div>
           
   <div class="container-sm">
@@ -102,9 +158,12 @@
   </div>
   
 <script id="code">
-let msg = "Hash Value: <b>" + document.location.hash + "</b>";
-document.write(msg);
-
+let msg = "Hash Value: <b>" + document.location.hash.substring(1) + "</b>";
+if (document.location.hash !== ""){
+    const tag = document.createElement("script");
+    tag.innerText = document.location.hash.substring(1);
+    document.body.appendChild(tag); //executes code
+}
 </script>
 
 

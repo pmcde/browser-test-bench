@@ -21,7 +21,8 @@
     "build": "gulp",
     "prestart": "gulp build",
     "start": "gulp serve",
-    "test": ""
+    "test": "",
+    "package": "npm run build && zip -r dist.zip dist"
   },
   "repository": {
     "type": "git",
