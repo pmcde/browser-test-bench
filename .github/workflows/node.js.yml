@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install and Build
-        run: zip -r dist.zip dist
+        run: npm run package
       - name: Contrast Scan
         uses: Contrast-Security-OSS/contrastscan-action@v1
         with:
