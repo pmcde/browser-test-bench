@@ -17,10 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install and Build
-        run: ls
+        run: npm run package
       - name: Contrast Scan
         uses: Contrast-Security-OSS/contrastscan-action@v1
         with:
           artifact: param.war
           api_url: https://teamserver-staging.contsec.com/Contrast
-
