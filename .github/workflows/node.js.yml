@@ -10,11 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_API_ACCESS_TOKEN: ${{ secrets.SCAN_PAT }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      CONTRAST__API__USER_NAME: "patrick.mcdevitt@contrastsecurity.com"
-      CONTRAST__API__ORGANIZATION_ID: "74f4cd04-6ca9-4eb7-a7a7-78909c2101cc"
-      CONTRAST__API__SERVICE_KEY: "VWT7TDX0M4AE8MRL"
-      CONTRAST__API__API_KEY: "LfXlest12DW34r7Gt4wSj4c6YYkEUMqc"
+      CONTRAST__API__USER_NAME: "agent_5deb031c-8a39-4d16-bc9f-f3736024b3b5@Scan"
+      CONTRAST__API__ORGANIZATION_ID: "5deb031c-8a39-4d16-bc9f-f3736024b3b5"
+      CONTRAST__API__SERVICE_KEY: "4QSLIWWZIXFS8J4X"
+      CONTRAST__API__API_KEY: "iTykB1I11E9f467RpT32Wo7UBHFdi6g2"
     steps:
       - uses: actions/checkout@v2
       - name: Install and Build
@@ -22,5 +21,5 @@ jobs:
       - name: Contrast Scan
         uses: Contrast-Security-OSS/contrastscan-action@v1
         with:
-          artifact: dist.zip
+          artifact: param.war
 
