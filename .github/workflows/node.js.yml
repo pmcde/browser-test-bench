@@ -22,4 +22,5 @@ jobs:
         uses: Contrast-Security-OSS/contrastscan-action@v1
         with:
           artifact: param.war
+          api_url: https://teamserver-staging.contsec.com/Contrast
 
