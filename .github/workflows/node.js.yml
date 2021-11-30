@@ -9,7 +9,7 @@ jobs:
   Scan:
     runs-on: ubuntu-latest
     env:
-      GH_API_ACCESS_TOKEN: ${{ secrets.SCAN_PAT }}
+      GH_API_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       CONTRAST__API__USER_NAME: "agent_5deb031c-8a39-4d16-bc9f-f3736024b3b5@Scan"
       CONTRAST__API__ORGANIZATION_ID: "5deb031c-8a39-4d16-bc9f-f3736024b3b5"
       CONTRAST__API__SERVICE_KEY: "4QSLIWWZIXFS8J4X"
