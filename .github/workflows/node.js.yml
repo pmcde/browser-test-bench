@@ -6,24 +6,6 @@ name: Node.js CI
 on: push
 
 jobs:
-  Scan:
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.SCAN_PAT }}
-      CONTRAST__API__USER_NAME: "service-account@contrast.com"
-      CONTRAST__API__ORGANIZATION_ID: "5deb031c-8a39-4d16-bc9f-f3736024b3b5"
-      CONTRAST__API__SERVICE_KEY: "U8DTANW8ECFC93RA"
-      CONTRAST__API__API_KEY: "iTykB1I11E9f467RpT32Wo7UBHFdi6g2"
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install and Build
-        run: npm run package
-      - name: Contrast Scan
-        uses: Contrast-Security-OSS/contrastscan-action@v1
-        with:
-          artifact: param.war
-          api_url: https://teamserver-staging.contsec.com/Contrast
-
   local-scan:
     runs-on: ubuntu-latest
     env:
