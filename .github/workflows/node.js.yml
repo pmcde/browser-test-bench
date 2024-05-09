@@ -8,8 +8,6 @@ on: push
 jobs:
   local-scan:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.SCAN_PAT }}
     steps:
       - uses: actions/checkout@v3
       - name: Contrast Local Scan
