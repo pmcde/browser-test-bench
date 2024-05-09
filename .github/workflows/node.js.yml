@@ -28,17 +28,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.SCAN_PAT }}
-      CONTRAST__API__URL: "https://teamserver-harmony-dev.contsec.com/Contrast/api/sast"
-      CONTRAST__API__USER_NAME: "patrick.mcdevitt@contrastsecurity.com"
-      CONTRAST__API__ORGANIZATION_ID: "74f4cd04-6ca9-4eb7-a7a7-78909c2101cc"
-      CONTRAST__API__SERVICE_KEY: "WT7TDX0M4AE8MRL"
-      CONTRAST__API__API_KEY: "LfXlest12DW34r7Gt4wSj4c6YYkEUMqc"
     steps:
       - uses: actions/checkout@v3
       - uses: Contrast-Security-OSS/contrast-local-scan-action@v1.0.0
         with:
-          apiUrl: ${{ CONTRAST__API__URL }}
-          apiUserName: ${{ CONTRAST__API__USER_NAME }}
-          apiKey: ${{ CONTRAST__API__API_KEY }}
-          apiServiceKey: ${{ CONTRAST__API__SERVICE_KEY }}
-          apiOrgId: ${{ CONTRAST__API__ORGANIZATION }}
+          apiUrl: "https://teamserver-harmony-dev.contsec.com/Contrast/api/sast"
+          apiUserName: "patrick.mcdevitt@contrastsecurity.com"
+          apiKey: "LfXlest12DW34r7Gt4wSj4c6YYkEUMqc"
+          apiServiceKey: "WT7TDX0M4AE8MRL"
+          apiOrgId: "74f4cd04-6ca9-4eb7-a7a7-78909c2101cc"
