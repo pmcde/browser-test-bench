@@ -30,7 +30,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.SCAN_PAT }}
     steps:
       - uses: actions/checkout@v3
-      - uses: Contrast-Security-OSS/contrast-local-scan-action@v1.0.0
+      - uses: Contrast-Security-OSS/contrast-local-scan-action@v1.0.1
         with:
           apiUrl: "https://teamserver-harmony-dev.contsec.com/Contrast/api/sast"
           apiUserName: "patrick.mcdevitt@contrastsecurity.com"
