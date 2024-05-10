@@ -9,12 +9,14 @@ jobs:
   local-scan:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Contrast Local Scan
         uses: Contrast-Security-OSS/contrast-local-scan-action@v1.0.1
         with:
-          apiUrl: "https://teamserver-harmony-dev.contsec.com/Contrast/api/sast"
-          apiUserName: "patrick.mcdevitt@contrastsecurity.com"
-          apiKey: "LfXlest12DW34r7Gt4wSj4c6YYkEUMqc"
-          apiServiceKey: "WT7TDX0M4AE8MRL"
-          apiOrgId: "74f4cd04-6ca9-4eb7-a7a7-78909c2101cc"
+          apiUrl: ${{ secrets.CONTRAST__API__URL }}
+          apiUserName: ${{ secrets.CONTRAST__API__USER_NAME }}
+          apiKey: ${{ secrets.CONTRAST__API__API_KEY }}
+          apiServiceKey: ${{ secrets.CONTRAST__API__SERVICE_KEY }}
+          apiOrgId: ${{ secrets.CONTRAST__API__ORGANIZATION }}
+
+
