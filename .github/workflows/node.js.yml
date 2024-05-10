@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Contrast Local Scan
-        uses: Contrast-Security-OSS/contrast-local-scan-action@v1.0.1
+        uses: Contrast-Security-OSS/contrast-local-scan-action@vlatest
         with:
           apiUrl: "https://teamserver-harmony-dev.contsec.com/Contrast/api/sast"
           apiUserName: "patrick.mcdevitt@contrastsecurity.com"
