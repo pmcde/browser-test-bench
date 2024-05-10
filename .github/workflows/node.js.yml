@@ -9,7 +9,7 @@ jobs:
   local-scan:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Contrast Local Scan
         uses: Contrast-Security-OSS/contrast-local-scan-action@v1.0.1
         with:
